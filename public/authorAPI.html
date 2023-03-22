@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author API</title>
+</head>
+
+<body>
+
+    <div id="learnosity-author"></div>
+
+    <script src="//authorapi.learnosity.com/?v2023.1.LTS"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+
+        $.ajax({
+            url: "/author",
+            method: "post",
+            success: function (request) {
+                console.log(request)
+
+                let authorApp = LearnosityAuthor.init(request, {
+                    readyListener: function () {
+                        console.log("Author API has successfully initialized.")
+                    }
+                })
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
