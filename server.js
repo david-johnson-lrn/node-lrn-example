@@ -3,7 +3,7 @@ let path = require('path')
 let routes = require('./routes')
 let app = express();
 
-let PORT = 8008;
+let PORT = 8888;
 
 app.use(routes);
 
