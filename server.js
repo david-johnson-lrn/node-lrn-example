@@ -14,6 +14,13 @@ app.get("/author", function (req, res) {
     })
 })
 
+app.get("/items", function (req, res) {
+    res.sendFile(path.join(__dirname, "/public/itemsAPI.html"), function (err) {
+        if (err)
+            throw err
+    })
+})
+
 //Sends a standard index.html
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"), function (err) {
